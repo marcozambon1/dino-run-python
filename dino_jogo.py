@@ -57,9 +57,9 @@ som_colisao = pygame.mixer.Sound("assets/sons/faustao-errou.mp3")
 #variavel de estado: 'menu', 'jogando', 'game_over'
 estado_jogo = 'menu'
 
-#dino
-dino_index = 0 #frame atual
-dino_timer = 0 #contador de frames
+#dpersonagem dino
+dino_index = 0 #frame atual, qual parte da animação esta sendo usada
+dino_timer = 0 #contador de frames para trocar a animacao
 velocidade_animacao = 0.2 
 dino_x = 50
 dino_y = 310
@@ -124,19 +124,6 @@ while rodando:
                     dino_vel_y = -15 #velocidade do pulo
                     pulando = True
                     som_pulo.play()
-
-                    if not pulando: #dino só corre se está no chão
-                        dino_timer += velocidade_animacao
-                        if dino_timer >= len(dino_frames):
-                            dino_timer = 0
-                        dino_index = int(dino_timer) #transforma o float em índice inteiro
-                    else:
-                        #quando ele está pulando trava no frame 1
-                        dino_index = 1 
-
-                    # DESENHO
-                    # Agora desenhamos o frame atual da nossa lista
-                    tela.blit(dino_frames[dino_index], (dino_x, dino_y))
                 
                 #no game over espaco reinicia
                 elif estado_jogo == 'game_over':
@@ -175,7 +162,7 @@ while rodando:
                 dino_timer = 0
             dino_index = int(dino_timer)
         else:
-            dino_index = 1 # Frame estático enquanto pula
+            dino_index = 1 #trava o frame enquanto pula
 
         # --- OBSTÁCULOS E PONTOS ---
         cacto_x -= velocidade_jogo
@@ -194,7 +181,7 @@ while rodando:
         # Desenha o Dino animado
         tela.blit(dino_frames[dino_index], (dino_x - 5, dino_y - 10))
 
-        # Desenha o Cacto no lugar do antigo retângulo verde
+        # Desenha o Cacto
         tela.blit(cacto_img, (cacto_x, cacto_y))
 
         # Desenha o chão e texto
