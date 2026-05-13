@@ -24,7 +24,7 @@ Siga as instruções abaixo para rodar o jogo em sua máquina:
 
 1. **Clone o repositório:**
    ```bash
-   git clone <URL_DO_SEU_REPOSITORIO>
+   git clone https://github.com/marcozambon1/dino-run-python.git
    cd dino_jogo
    ```
 
@@ -54,6 +54,11 @@ Siga as instruções abaixo para rodar o jogo em sua máquina:
    python dino_jogo.py
    ```
    *(Substitua `main.py` pelo nome do seu arquivo principal, caso seja diferente).*
+
+## 🕹️ Controles do Jogo
+
+*   <kbd>Espaço</kbd>: Saltar
+*   <kbd>Q</kbd>: Sair do jogo
 
 ## 📚 Contexto Acadêmico
 
