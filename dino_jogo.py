@@ -136,13 +136,13 @@ while rodando:
         dino_rect = pygame.Rect(dino_x, dino_y, 40, 40)
         cacto_rect = pygame.Rect(cacto_x, cacto_y, cacto_largura, cacto_altura)
         
-        # Desenha o Dino animado
+        #Dino animado
         tela.blit(dino_frames[dino_index], (dino_x - 5, dino_y - 10))
 
-        # Desenha o Cacto
+        #Cacto
         tela.blit(cacto_img, (cacto_x, cacto_y))
 
-        # Desenha o chão e texto
+        #chão e texto
         pygame.draw.line(tela, (150, 150, 150), (0, 340), (800, 340), 2)
         exibir_texto(f"Pontos: {int(pontos)}", (83, 83, 83), 550, 20)
 
